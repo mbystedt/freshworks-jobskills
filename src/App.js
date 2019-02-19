@@ -1,26 +1,46 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Suspense } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from 'axios';
+
+import Home from './containers/Home';
+import Header from './containers/Layout/Header';
+import Loader from './containers/Loader/Loader';
+import { API_LOCATION } from './utils/constants';
+
 import './App.css';
 
+const Jobs = React.lazy(() => import('./containers/Jobs'));
+const Skills = React.lazy(() => import('./containers/Skills'));
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    axios.defaults.baseURL = API_LOCATION;
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+
+          <Header />
+          
+          <Route exact path="/" component={Home} />
+          <Route path="/jobs" render={(props) => (
+            <Suspense fallback={<Loader />}>
+              <Jobs {...props} />
+            </Suspense>
+            )}
+          />
+          <Route path="/skills" render={(props) => (
+            <Suspense fallback={<Loader />}>
+              <Skills {...props} />
+            </Suspense>
+            )}
+          />
+        </div>
+    </Router>
     );
   }
 }

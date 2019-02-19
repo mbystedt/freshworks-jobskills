@@ -1,0 +1,23 @@
+.loaderBlock {
+  background-color: #ddd;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.loader {
+  animation: spin infinite 5s linear;
+  pointer-events: none;
+  display: inline-block;
+  width: 1em;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,21 @@
+.dropdownItem {
+  margin: 0 -15px;
+}
+
+.dropdownItem a {
+  padding: 4px 15px;
+  display: block;
+  color: #444;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.dropdownItem a:hover {
+  background-color: rgb(187, 222, 236);
+  transition: background-color .2s ease;
+  color: #222;
+}
+
+.dropdownItem a:active {
+  background-color: rgb(162, 192, 204);
+}

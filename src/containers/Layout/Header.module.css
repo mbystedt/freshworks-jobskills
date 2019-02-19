@@ -1,0 +1,25 @@
+.header {
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+
+  border-bottom: 1px solid gray;
+}
+
+.headerItem {
+  line-height: 34px;
+  font-weight: bold;
+}
+
+.headerItem a {
+  display: block;
+  padding: 0 20px;
+  color: #444;
+  text-decoration: none;
+}
+
+.headerItem a:hover {
+  background-color: #ddd;
+}

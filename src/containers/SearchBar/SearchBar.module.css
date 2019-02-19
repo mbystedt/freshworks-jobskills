@@ -1,0 +1,16 @@
+.searchBar {
+  text-align: left;
+  display: inline-block;
+}
+
+.smallText {
+  font-size: 12px;
+}
+
+.searchBar input {
+  min-width: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
