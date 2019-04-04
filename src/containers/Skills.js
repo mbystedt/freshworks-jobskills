@@ -4,6 +4,9 @@ import { Route } from 'react-router-dom';
 import SearchBar from './SearchBar/SearchBar'
 import SkillDetail from './SkillDetail/SkillDetail'
 
+/**
+ * Wraps the search bar with the skill api and type
+ */
 class Skills extends Component {
   render() {
     return (

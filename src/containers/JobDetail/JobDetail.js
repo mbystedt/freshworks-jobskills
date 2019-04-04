@@ -6,6 +6,10 @@ import Loader from '../Loader/Loader';
 
 import styles from './JobDetail.module.css';
 
+/**
+ * Displays the details of a job
+ * @prop uuid   The id of the job to display
+ */
 class JobDetail extends Component {
 
   constructor(props) {

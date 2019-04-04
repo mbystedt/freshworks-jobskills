@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Displays helpful text on the home page
+ */
 class Home extends Component {
   render() {
     return (

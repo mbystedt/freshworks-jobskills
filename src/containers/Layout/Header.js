@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './Header.module.css';
 
+/**
+ * Displays the header of the application
+ */
 class Header extends Component {
   render() {
     return (

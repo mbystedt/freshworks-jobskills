@@ -6,6 +6,10 @@ import Loader from '../Loader/Loader';
 
 import styles from './SkillDetail.module.css';
 
+/**
+ * Displays the details of a skill
+ * @prop uuid   The id of the skill to display
+ */
 class SkillDetail extends Component {
 
   constructor(props) {

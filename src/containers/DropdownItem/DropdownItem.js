@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 
 import styles from './DropdownItem.module.css';
 
+/**
+ * A generic dropdown item
+ * @prop link The router link for the item
+ * @prop name The text to display for the link
+ */
 class DropdownItem extends Component {
   render() {
     return (

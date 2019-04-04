@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import styles from './Loader.module.css';
 
+/**
+ * Displays a generic loader spinner
+ */
 class Loader extends Component {
   render() {
     return (

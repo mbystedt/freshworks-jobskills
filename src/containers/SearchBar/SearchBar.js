@@ -10,6 +10,11 @@ import { DROPDOWN_DELAY_MS, SEARCH_DEBOUNCE_MS } from '../../utils/constants';
 
 import styles from './SearchBar.module.css';
 
+/**
+ * Displays a search bar and a dropdown with matched items to select
+ * @prop api   The api to query for the matched items
+ * @prop type   The type (skills or jobs) of these matched items.
+ */
 class SearchBar extends Component {
   searchText$ = new Subject();
 
@@ -28,14 +33,19 @@ class SearchBar extends Component {
 
   componentDidMount() {
     this.searchText$.pipe(
+      // Debounce so we don't call too often
       debounceTime(SEARCH_DEBOUNCE_MS),
+      // Don't do anything if nothing changed
       distinctUntilChanged(),
+      // Convert the text into an observable with the results
       concatMap(value => {
+        // If search is blank then no results are shown
         if (value === '') {
           return from([{
             data: []
           }]);
         }
+        // Generate observable from promise
         return from(
           axios.get(this.props.api, {
             params: {
@@ -43,16 +53,19 @@ class SearchBar extends Component {
             }
           })
         ).pipe(
+          // If nothing is found then an error is returned
           catchError(() => from([undefined]))
         );
       })
     ).subscribe((response) => {
       if (response) {
+        // Either search was blank or search returned results
         this.setState({
           notFound: false,
           responses: response.data
         });
       } else {
+        // Error condition - Assume nothing found
         this.setState({
           notFound: true,
           responses: []

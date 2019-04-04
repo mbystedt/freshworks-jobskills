@@ -4,7 +4,10 @@ import { Route } from 'react-router-dom';
 import SearchBar from './SearchBar/SearchBar'
 import JobDetail from './JobDetail/JobDetail'
 
-class Skills extends Component {
+/**
+ * Wraps the search bar with the job api and type
+ */
+class Jobs extends Component {
 
   render() {
     return (
@@ -20,4 +23,4 @@ class Skills extends Component {
   }
 }
 
-export default Skills;
+export default Jobs;

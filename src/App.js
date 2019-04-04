@@ -12,6 +12,9 @@ import './App.css';
 const Jobs = React.lazy(() => import('./containers/Jobs'));
 const Skills = React.lazy(() => import('./containers/Skills'));
 
+/**
+ * Main app component
+ */
 class App extends Component {
   constructor(props) {
     super(props);
