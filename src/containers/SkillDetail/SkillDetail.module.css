@@ -4,13 +4,40 @@
 }
 
 .detailPanel {
-  width: 100%
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .detailPanelList {
   height: 300px;
-  overflow-y: auto;
+  overflow-y: scroll;
   text-align: left;
+}
+
+.detailPanelList ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+.detailPanelList li {
+  font-size: 12px;
+  line-height: 22px;
+  border-bottom: 1px solid #eee;
+}
+
+.detailPanelList li a {
+  display: block;
+  padding-left: 10px;
+}
+
+.detailPanelList li a:hover {
+  background-color: #eee;
+}
+ 
+.detailPanelList li:last-child {
+  border: none;
 }
 
 @media (min-width: 600px) {
